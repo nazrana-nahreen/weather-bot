@@ -1,0 +1,15 @@
+# render.yaml
+# This file tells Render.com how to run your bot for free.
+# You don't need to edit this file — just upload it with your code.
+
+services:
+  - type: worker
+    name: weather-bot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: OPENWEATHER_API_KEY
+        sync: false
